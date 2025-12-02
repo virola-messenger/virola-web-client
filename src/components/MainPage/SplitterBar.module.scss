@@ -1,0 +1,15 @@
+.splitter-bar {
+	position: absolute;
+	left: var(--vc-left-sidebar-width);
+	width: var(--vc-splitter-bar-width);
+	height: 100%;
+	background-color: transparent;
+	cursor: ew-resize;
+	user-select: none;
+	z-index: 100;
+
+	&:hover {
+		background-color: var(--vc-splitter-bar-color);
+		transition: ease background-color 0.5s;
+	}
+}

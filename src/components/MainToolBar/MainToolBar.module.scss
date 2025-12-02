@@ -1,0 +1,35 @@
+.toolbar-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	flex-basis: 3.5rem;
+	flex-shrink: 0;
+
+	padding: 0 0.5rem;
+
+	background-color: var(--vc-nav-background-color);
+
+	border-bottom-width: 1;
+	border-bottom-style: solid;
+	border-bottom-color: var(--vc-nav-border-color);
+
+	img {
+		vertical-align: middle;
+	}
+
+	button {
+		border-radius: 1rem;
+	}
+}
+
+.avatar {
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	margin-top: 0.5rem;
+
+	img {
+		vertical-align: middle;
+	}
+}

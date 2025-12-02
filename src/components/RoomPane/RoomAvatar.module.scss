@@ -1,0 +1,34 @@
+.circle {
+	border-radius: 50%;
+	background-color: #627990;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Optional: For multiline text */
+	color: var(--vc-current-room-text-color);
+	flex-shrink: 0;
+}
+
+.avatar {
+	border-radius: 50%;
+	background-color: #629079;
+
+	img {
+		vertical-align: middle;
+	}
+
+	svg {
+		stroke: white;
+	}
+}
+
+.small {
+	width: 2rem;
+	height: 2rem;
+	font-size: 0.8rem;
+}
+
+.normal {
+	width: 2.5rem;
+	height: 2.5rem;
+}

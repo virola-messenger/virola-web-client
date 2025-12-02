@@ -1,0 +1,44 @@
+.attachments {
+	display: flex;
+	flex-direction: column;
+}
+
+.attachment {
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 0.5rem;
+}
+
+.attachment-link {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	a {
+		svg {
+			vertical-align: top;
+		}
+	}
+}
+
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke: var(--vc-text-color);
+
+	margin-right: 0.5rem;
+}
+
+.image {
+	max-width: 20rem;
+}
+
+.video {
+	max-width: 20rem;
+}
+
+.audio {
+	width: 100%;
+	min-width: 20rem;
+}

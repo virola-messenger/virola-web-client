@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+	  "target": "ES2021",
+	  "lib": ["DOM", "ES2021"],
+	  "module": "ESNext",
+	  "strict": true,
+	  "skipLibCheck": true,
+	  "isolatedModules": true,
+	  "resolveJsonModule": true,
+	  "moduleResolution": "bundler",
+	  "jsx": "react",
+	  "paths": {
+		"@virola/*": ["./src/*"]
+	  }
+	},
+	"include": ["src"]
+}

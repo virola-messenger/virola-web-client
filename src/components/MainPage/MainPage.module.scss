@@ -1,0 +1,36 @@
+$default-left-sidebar-width: 300px;
+$header-height: 60px;
+
+:root {
+	--vc-left-sidebar-width: #{$default-left-sidebar-width};
+	--vc-central-pane-width: calc(100vw - var(--vc-left-sidebar-width));
+	--vc-splitter-bar-width: 0.4rem;
+}
+
+.main-page {
+	display: flex;
+	flex-direction: row;
+	//align-items: stretch;
+
+	height: 100vh;
+	width: 100vw;
+}
+
+
+.left-sidebar {
+	display: flex;
+	flex-direction: column;
+	flex-basis: var(--vc-left-sidebar-width);
+	flex-shrink: 0;
+	align-self: stretch;
+
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: var(--vc-navigation-pane-border-color);
+}
+
+.central-pane {
+	flex-grow: 1;
+	max-width: var(--vc-central-pane-width);
+}
+

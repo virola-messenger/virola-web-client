@@ -1,0 +1,17 @@
+
+.splitter-bar {
+	position: absolute;
+	top: calc(var(--vc-text-messenger-splitter-pos) - var(--vc-splitter-bar-width) / 2);
+	left: var(--vc-left-sidebar-width);
+	width: var(--vc-central-pane-width);
+	height: var(--vc-splitter-bar-width);
+	background-color: transparent;
+	cursor: ns-resize;
+	user-select: none;
+	z-index: 100;
+
+	&:hover {
+		background-color: var(--vc-splitter-bar-color);
+		transition: ease background-color 0.5s;
+	}
+}

@@ -1,0 +1,74 @@
+@use '@virola/styles/typography';
+
+// Normalization of HTML elements
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: typography.$font-family-base;
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	background-color: var(--vc-background-color);
+	color: var(--vc-text-color);
+	
+	font-weight: typography.$font-weight-base;
+	font-size: typography.$font-size-base;
+	line-height: typography.$line-height-base;
+}
+
+h1 {
+	@include typography.heading;
+	font-size: typography.$h1-font-size;
+}
+
+h2 {
+	@include typography.heading;
+	font-size: typography.$h2-font-size;
+}
+
+h3 {
+	@include typography.heading;
+	font-size: typography.$h3-font-size;
+}
+
+h4 {
+	@include typography.heading;
+	font-size: typography.$h4-font-size;
+}
+
+h5 {
+	@include typography.heading;
+	font-size: typography.$h5-font-size;
+}
+
+h6 {
+	@include typography.heading;
+	font-size: typography.$h6-font-size;
+}
+
+a {
+	color: var(--vc-link-color);
+	text-decoration: none;
+	transition: color 0.2s ease-in-out 0s;
+
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+hr {
+	height: 0px;
+	border: none;
+	border-top: 1px solid var(--vc-devider-color);
+}
+
+ul {
+	padding-left: 2rem;
+}

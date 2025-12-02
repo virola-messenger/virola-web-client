@@ -1,0 +1,34 @@
+.footer {
+	margin: 0 -0.5rem -0.5rem -0.5rem;
+	padding: 0 0.5rem 0.5rem 0.5rem;
+
+	border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.meeting {
+	background-color: var(--vc-meeting-text-message-bubble-footer-color);
+}
+
+.issue-backlog {
+	background-color: var(--vc-issue-backlog-text-message-bubble-footer-color);
+}
+
+.issue-todo {
+	background-color: var(--vc-issue-todo-text-message-bubble-footer-color);
+}
+
+.issue-in-progress {
+	background-color: var(--vc-issue-in-progress-text-message-bubble-footer-color);
+}
+
+.issue-to-verify {
+	background-color: var(--vc-issue-to-verify-text-message-bubble-footer-color);
+}
+
+.issue-done {
+	background-color: var(--vc-issue-done-text-message-bubble-footer-color);
+}
+
+.issue-declined {
+	background-color: var(--vc-issue-declined-text-message-bubble-footer-color);
+}

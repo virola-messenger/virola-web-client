@@ -1,0 +1,43 @@
+.discussion-bar {
+	margin-top: .5rem;
+
+	hr {
+		height: 0px;
+    	border: none;
+    	border-top: 1px solid;
+		margin-top: 0;
+		margin-bottom: .5rem;
+	}
+}
+
+.own {
+	border-color: var(--vc-my-text-message-bubble-text-color);
+}
+
+.other {
+	border-color: var(--vc-text-message-bubble-text-color);
+}
+
+.own-stroke {
+	stroke: var(--vc-my-text-message-bubble-text-color);
+}
+
+.other-stroke {
+	stroke: var(--vc-text-message-bubble-text-color);
+}
+
+.comments-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	&:hover {
+		cursor: pointer;
+		color: var(--vc-text-color);
+
+		svg {
+			stroke: var(--vc-text-color);
+		}
+	}
+}

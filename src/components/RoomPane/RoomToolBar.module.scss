@@ -1,0 +1,40 @@
+.room-toolbar {
+	display: flex;
+	align-items: center;
+
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+
+	width: 100%;
+	height: 3.5rem;
+
+	border-bottom-width: 1;
+	border-bottom-style: solid;
+	border-bottom-color: var(--vc-nav-border-color);
+}
+
+.toolbar-title {
+	flex-grow: 1;
+
+	background-color: var(--vc-room-toolbar-background-color);
+	color: var(--vc-room-toolbar-title-color);
+	font-size: 1.25rem;
+
+	margin-left: 1rem;
+}
+
+
+.inline-block {
+	display: inline-block;
+}
+
+.tool-button {
+	margin-right: 0.5rem;
+	stroke: var(--vc-tool-button-color);
+
+	&:hover {
+		cursor: pointer;
+
+		stroke: var(--vc-tool-button-hover-color);
+	}
+}

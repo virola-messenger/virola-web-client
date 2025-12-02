@@ -1,0 +1,21 @@
+.group-header {
+	cursor: pointer;
+	min-height: 1.5rem;
+	padding: 0.25rem;
+	padding-left: 0.5rem;
+	padding-top: 1rem;
+	font-size: 1.1rem;
+	//border-radius: 1rem;
+	//font-weight: bold;
+	//background-color: var(--vc-room-group-background-color);
+	color: var(--vc-room-group-title-color);
+
+	border-bottom-color: var(--vc-room-group-border-color);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+
+	svg {
+		margin-right: 0.5rem;
+		fill: var(--vc-room-group-icon-color);
+	}
+}

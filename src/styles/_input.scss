@@ -1,0 +1,60 @@
+@use '@virola/styles/colors';
+@use '@virola/styles/typography';
+@use '@virola/styles/layout';
+
+input[type]:not([type=submit]) {
+	background-color: var(--vc-input-background-color);
+	color: var(--vc-input-text-color);
+	cursor: text;
+
+	font-size: typography.$font-size-base;
+
+	border-color: var(--vc-input-border-color);
+	border-radius: layout.$input-border-radius;
+	border-width: layout.$input-border-width;
+	border-style: solid;
+
+	transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+	padding: 0.25rem 0.5rem;
+	height: typography.$font-size-base * 2;
+
+	&:hover {
+		background-color: var(--vc-input-background-hover-color);
+		border-color: var(--vc-input-border-hover-color);
+	}
+	
+	&:focus {
+		border-color: var(--vc-input-focus-color);
+		outline: none;
+	}
+
+	&::placeholder {
+		color: var(--vc-input-placeholder-color);
+	}
+}
+
+input[type=submit] {
+	background-color: var(--vc-button-background-color);
+	color: var(--vc-button-title-color);
+	cursor: pointer;
+
+	font-size: typography.$font-size-base;
+
+	border-color: var(--vc-button-border-color);
+	border-radius: layout.$button-border-radius;
+	border-width: layout.$button-border-width;
+	border-style: solid;
+
+	transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+	padding: 0.25 0.5rem;
+	height: typography.$font-size-base * 2;
+
+	&:focus {
+		border-color: var(--vc-button-focus-color);
+		outline: none;
+	}
+
+	&:hover {
+		background-color: var(--vc-button-background-hover-color);
+	}
+}

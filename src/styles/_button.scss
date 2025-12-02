@@ -1,0 +1,29 @@
+@use '@virola/styles/colors';
+@use '@virola/styles/typography';
+@use '@virola/styles/layout';
+
+button {
+	background-color: var(--vc-button-background-color);
+	color: var(--vc-button-title-color);
+	cursor: pointer;
+
+	font-size: typography.$font-size-base;
+
+	border-color: var(--vc-button-border-color);
+	border-radius: layout.$button-border-radius;
+	border-width: layout.$button-border-width;
+	border-style: solid;
+
+	transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+	padding: 0.25rem 1rem;
+	height: typography.$font-size-base * 2;
+
+	&:focus {
+		border-color: var(--vc-button-focus-color);
+		outline: none;
+	}
+
+	&:hover {
+		background-color: var(--vc-button-background-hover-color);
+	}
+}

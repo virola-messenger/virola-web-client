@@ -1,0 +1,23 @@
+.item-container-left {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 3rem auto;
+}
+
+.item-container-right {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.user-name {
+	font-size: 0.9rem;
+	color: var(--vc-text-message-pane-user-name-color);
+}
+
+.avatar {
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	margin-top: 0.5rem;
+}

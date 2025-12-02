@@ -1,0 +1,15 @@
+.avatar {
+	border-radius: 50%;
+	background-color: #629079;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin-top: 0.5rem;
+
+	img {
+		vertical-align: middle;
+	}
+
+	svg {
+		stroke: white;
+	}
+}

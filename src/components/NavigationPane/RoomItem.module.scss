@@ -1,0 +1,44 @@
+@use "@virola/styles/colors";
+@use "@virola/styles/typography";
+
+.room-item {
+	cursor: pointer;
+
+	padding: 0 0.5rem;
+
+	//border-bottom: 1px solid var(--vc-room-divider-color);
+
+
+	&:hover:not(.current) {
+		background-color: var(--vc-room-background-hover-color);
+	}
+
+	hr {
+		height: 0px;
+		border: none;
+		border-top: 1px solid var(--vc-room-divider-color);
+	}
+}
+
+.item-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0;
+}
+
+.room-title {
+	font-size: 1.1rem;
+	flex-grow: 1;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.current {
+	background-color: var(--vc-current-room-background-color);
+	color: var(--vc-current-room-text-color);
+
+	hr {
+		border-color: var(--vc-current-room-background-color);
+	}
+}

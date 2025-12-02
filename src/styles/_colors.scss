@@ -1,0 +1,97 @@
+$theme-colors: (
+	"background-color": light-dark(#ffffff, #1f242b),
+	"text-color": light-dark(#000000, #ffffff),
+
+	"nav-background-color": light-dark(#ffffff, #1f242b),
+	"nav-text-color": light-dark(#000000, #cccccc),
+	"nav-shadow-color": light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+	"nav-border-color": light-dark(#dbdbdc, #31363d),
+
+	"box-background-color": light-dark(#efeff0, #2a333c),
+	"box-border-color": light-dark(#b7b9bd, #4d5864),
+	"box-shadow-color": light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+
+	"input-background-color": light-dark(#ffffff, #1f242b),
+	"input-text-color": light-dark(#000000, #ffffff),
+	"input-placeholder-color": light-dark(#959799, #6B6D6F),
+	"input-border-color": light-dark(#b7b9bd, #4d5864),
+	"input-focus-color": light-dark(#009FDA, #006EC5),
+	"input-background-hover-color": light-dark(#ffffff, #1f242b),
+	"input-border-hover-color": light-dark(#939598, #616E7D),
+
+	"button-background-color": light-dark(#e0e1e3, #343e4a),
+	"button-title-color": light-dark(#4b4b4c, #bbbfc2),
+	"button-border-color": light-dark(#9c9c9d, #747980),
+	"button-focus-color": light-dark(#009FDA, #006EC5),
+	"button-background-hover-color": light-dark(#f0f0f1, #414a56),
+
+	"navigation-pane-background-color": light-dark(#ffffff, #1f242b),
+	"navigation-pane-text-color": light-dark(#000000, #ffffff),
+	"navigation-pane-border-color": light-dark(#dbdbdc, #31363d),
+	"room-group-background-color": light-dark(#ebeced, #1a1e23),
+	"room-group-title-color": light-dark(#317dac, #268BF1),
+	"room-group-border-color": light-dark(#768AA1, #5A6A7C),
+	"room-group-icon-color": light-dark(#768AA1, #5A6A7C),
+	"room-divider-color": light-dark(#f5f5f5, #2a2d35),
+	"current-room-background-color": light-dark(#00a1dd, #0067b8),
+	"current-room-text-color": light-dark(#ffffff, #ffffff),
+	"room-background-hover-color": light-dark(#efefef, #2d3239),
+
+	"link-color": light-dark(#4655D2, #8babf9),
+	"devider-color": light-dark(#f5f5f5, #2a2d35),
+
+	"text-message-pane-background-color": light-dark(#ebeced, #1a1e23),	
+	"text-message-pane-secondary-background-color": light-dark(#dedfe0, #111417),	
+	"text-message-editor-background-color": light-dark(#ffffff, #1f242b),
+	"text-message-editor-text-color": light-dark(#000000, #ffffff),
+	"textarea-background-color": light-dark(#ffffff, #1f242b),
+	"textarea-text-color": light-dark(#000000, #ffffff),
+
+	"text-message-pane-user-name-color": light-dark(#858585, #858585),
+
+	"text-message-bubble-color": light-dark(#ffffff, #202f40),
+	"text-message-bubble-text-color": light-dark(#555555, #b5babf),
+	"my-text-message-bubble-color": light-dark(#E4EAFF, #2b5278),
+	"my-text-message-bubble-text-color": light-dark(#474950, #b8c5d2),
+	"unread-text-message-bubble-color": light-dark(#ffeae4, #78522B),
+	"unread-text-message-bubble-text-color": light-dark(#514A48, #E2DAD1),
+	"meeting-text-message-bubble-color": light-dark(#e0eaf1, #375b5a),
+	"meeting-text-message-bubble-text-color": light-dark(#000000, #c8c8c8),
+	"meeting-text-message-bubble-header-color": light-dark(#2f4460, #2e4c4b),
+	"meeting-text-message-bubble-footer-color": light-dark(#2f4460, #2e4c4b),
+
+	"issue-backlog-text-message-bubble-color": light-dark(#cad2d6, #595f6a),
+	"issue-backlog-text-message-bubble-text-color": light-dark(#606060, #c8c8c8),
+	"issue-backlog-text-message-bubble-footer-color": light-dark(#b8bfc3, #4a4f58),
+	"issue-todo-text-message-bubble-color": light-dark(#fff29d, #646435),
+	"issue-todo-text-message-bubble-text-color": light-dark(#555555, #c8c8c8),
+	"issue-todo-text-message-bubble-footer-color": light-dark(#e8dc8f, #53532c),
+	"issue-in-progress-text-message-bubble-color": light-dark(#fed889, #645435),
+	"issue-in-progress-text-message-bubble-text-color": light-dark(#555555, #c8c8c8),
+	"issue-in-progress-text-message-bubble-footer-color": light-dark(#e7c47d, #53462c),
+	"issue-to-verify-text-message-bubble-color": light-dark(#d8f0b1, #466437),
+	"issue-to-verify-text-message-bubble-text-color": light-dark(#555555, #c8c8c8),
+	"issue-to-verify-text-message-bubble-footer-color": light-dark(#c4daa1, #3a532e),
+	"issue-done-text-message-bubble-color": light-dark(#d3dbc6, #596450),
+	"issue-done-text-message-bubble-text-color": light-dark(#606060, #c8c8c8),
+	"issue-done-text-message-bubble-footer-color": light-dark(#c0c7b4, #4a5343),
+	"issue-declined-text-message-bubble-color": light-dark(#cfcad6, #433846),
+	"issue-declined-text-message-bubble-text-color": light-dark(#606060, #c8c8c8),
+	"issue-declined-text-message-bubble-footer-color": light-dark(#bcb8c3, #382f3a),
+
+	"room-toolbar-background-color": light-dark(#ffffff, #1f242b),
+	"room-toolbar-title-color": light-dark(#000000, #ffffff),
+
+	"tool-button-color": light-dark(#525353, #b3b4b6),
+	"tool-button-hover-color": light-dark(#000000, #ffffff),
+
+	"unread-badge-background-color": light-dark(#FF5E00, #EF5800),
+	"unread-badge-text-color": light-dark(#ffffff, #ffffff),
+
+	"context-menu-background-color": light-dark(#ffffff, #252b32),
+	"context-menu-text-color": light-dark(#000000, #ffffff),
+	"context-menu-border-color": light-dark(#e7e9ed, #6c6e70),
+	"context-menu-hover-background-color": light-dark(#efefef, #515963),
+
+	"splitter-bar-color": light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))
+);

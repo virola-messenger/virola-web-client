@@ -1,0 +1,12 @@
+.meeting {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem;
+	margin: -0.5rem -0.5rem 0;
+
+	background-color: var(--vc-meeting-text-message-bubble-header-color);
+	color: var(--vc-meeting-text-message-bubble-text-color);
+	
+	border-radius: 0.5rem 0.5rem 0 0;
+}

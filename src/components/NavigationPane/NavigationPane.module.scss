@@ -1,0 +1,39 @@
+@use "@virola/styles/layout";
+
+$sidebar-border-width: 1px;
+
+.navigation-pane-container {
+	flex-grow: 1;
+	height: 0; // to make overflow in navigation pane work
+}
+
+.navigation-pane {
+	width: 100%;
+	height: 100%;
+
+	padding-top: 0.5rem;
+	overflow: auto;
+
+	background-color: var(--vc-navigation-pane-background-color);
+	color: var(--vc-navigation-pane-text-color);
+
+	border-right-width: $sidebar-border-width;
+	border-right-style: solid;
+	border-right-color: var(--vc-navigation-pane-border-color);
+}
+
+.divider {
+	min-height: 1.5rem;
+	padding: 0.25rem;
+	padding-left: 0.5rem;
+	padding-top: 1rem;
+	font-size: 1.1rem;
+	//border-radius: 1rem;
+	//font-weight: bold;
+	//background-color: var(--vc-navigation-pane-room-divider-color);
+	color: var(--vc-navigation-pane-room-divider-text-color);
+
+	border-bottom-color: var(--vc-navigation-pane-room-divider-text-color);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}

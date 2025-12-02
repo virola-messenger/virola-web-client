@@ -1,0 +1,9 @@
+@use '@virola/styles/colors';
+
+:root {
+	color-scheme: light dark;
+	
+	@each $color-name, $color-value in colors.$theme-colors {
+		--vc-#{$color-name}: #{$color-value};
+	}
+}

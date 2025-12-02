@@ -1,0 +1,100 @@
+.bubble {
+	margin: 0.5rem 0;
+	padding: 0.5rem 0.5rem;
+	box-shadow: 0 0 5px -2px var(--vc-box-shadow-color);
+	transition: 
+		background-color 1000ms ease-out, 
+		color 1000ms ease-out;
+}
+
+.own {
+	background-color: var(--vc-my-text-message-bubble-color);
+	color: var(--vc-my-text-message-bubble-text-color);
+}
+
+.other {
+	background-color: var(--vc-text-message-bubble-color);
+	color: var(--vc-text-message-bubble-text-color);
+}
+
+.unread {
+	background-color: var(--vc-unread-text-message-bubble-color);
+	color: var(--vc-unread-text-message-bubble-text-color);
+}
+
+.meeting {
+	background-color: var(--vc-meeting-text-message-bubble-color);
+	color: var(--vc-meeting-text-message-bubble-text-color);
+}
+
+.issue-default {
+	background-color: var(--vc-issue-backlog-text-message-bubble-color);
+	color: var(--vc-issue-backlog-text-message-bubble-text-color);
+}
+
+.issue-backlog {
+	background-color: var(--vc-issue-backlog-text-message-bubble-color);
+	color: var(--vc-issue-backlog-text-message-bubble-text-color);
+}
+
+.issue-todo {
+	background-color: var(--vc-issue-todo-text-message-bubble-color);
+	color: var(--vc-issue-todo-text-message-bubble-text-color);
+}
+
+.issue-in-progress {
+	background-color: var(--vc-issue-in-progress-text-message-bubble-color);
+	color: var(--vc-issue-in-progress-text-message-bubble-text-color);
+}
+
+.issue-to-verify {
+	background-color: var(--vc-issue-to-verify-text-message-bubble-color);
+	color: var(--vc-issue-to-verify-text-message-bubble-text-color);
+}
+
+.issue-done {
+	background-color: var(--vc-issue-done-text-message-bubble-color);
+	color: var(--vc-issue-done-text-message-bubble-text-color);
+}
+
+.issue-declined {
+	background-color: var(--vc-issue-declined-text-message-bubble-color);
+	color: var(--vc-issue-declined-text-message-bubble-text-color);
+}
+
+.rounded {
+	border-radius: 0.5rem;
+}
+
+.square {
+	border-radius: 0;
+}
+
+.tail-left {
+	border-top-left-radius: 0 !important;
+}
+
+.tail-right {
+	border-top-right-radius: 0 !important;
+}
+
+.content {
+	padding: 0;//0.5rem 1rem;
+	margin-bottom: -0.25rem;
+	max-width: calc(var(--vc-central-pane-width) - 10rem);
+	max-inline-size: calc(var(--vc-central-pane-width) - 10rem);
+	overflow-wrap: break-word;
+	overflow: auto;
+
+	p {
+		padding-bottom: 0.5rem;
+	}
+}
+
+.top-padding {
+	padding-top: 0.5rem;
+}
+
+.bottom-padding {
+	padding-bottom: 0.5rem;
+}
