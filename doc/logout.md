@@ -1,3 +1,12 @@
+# Logout the current user
+
+**Table of Contents**
+ 
+ - [Logout User](#post-apiv1logout)
+ - [Related Endpoints](#related-endpoints)
+ 
+ ---
+
 ## POST /api/v1/logout
 
 ### Purpose
@@ -66,6 +75,5 @@ JSON response example:
 
 ### Related Endpoints
 
-- POST /api/v1/login - Start a new session
-- GET /api/v1/status - Check if session is active
-
+- [POST /api/v1/login](login.md) - Start a new session
+- [GET /api/v1/status](status.md) - Check if session is active

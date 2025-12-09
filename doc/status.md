@@ -1,3 +1,12 @@
+# Status Check
+
+**Table of Contents**
+ 
+ - [Check Login Status](#get-apiv1status)
+ - [Related Endpoints](#related-endpoints)
+ 
+ ---
+
 ## GET /api/v1/status
 
 ### Purpose
@@ -72,5 +81,5 @@ JSON response example:
 
 ### Related Endpoints
 
-- POST /api/v1/login - Authenticate user and initiate session
-- POST /api/v1/logout - Terminate the current session
+- [POST /api/v1/login](login.md) - Authenticate user and initiate session
+- [POST /api/v1/logout](logout.md) - Terminate the current session

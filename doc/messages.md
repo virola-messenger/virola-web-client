@@ -1,3 +1,16 @@
+
+# Messages API Documentation
+
+**Table of Contents**
+
+- [Retrieving Messages](#get-apiv1roomsroomidmessages)
+- [Sending a Message](#post-apiv1roomsroomidmessages)
+- [Deleting a Message](#delete-apiv1messagesmessageid)
+- [Marking a Message as Read](#post-apiv1messagesmessageidread)
+- [Related API](#related-api)
+
+---
+
 ## GET /api/v1/rooms/${roomId}/messages
 
 ### Purpose
@@ -68,7 +81,17 @@ JSON response example:
       "priority": "Normal",
       "roomId": 2,
       "text": "Test message with attachment",
-      "userId": 1
+      "userId": 1,
+	  "readTimestamps": [
+			{
+				"readUtc": 1759757496294,
+				"userId": 1
+			},
+			{
+				"readUtc": 1759757494239,
+				"userId": 2
+			}
+	  ]
     },
     {
       "attachments": [],
@@ -83,7 +106,13 @@ JSON response example:
       "priority": "Normal",
       "roomId": 2,
       "text": "Test message",
-      "userId": 3
+      "userId": 3,
+	  "readTimestamps": [
+			{
+				"readUtc": 1759757494299,
+				"userId": 22
+			}
+	  ]
     }
   ],
   "roomId": 2
@@ -148,6 +177,39 @@ JSON response example:
 		- **createdUtc, lastModifiedUtc:** Timestamps for the attachment
 		- **textMessageId:** ID of the message this attachment belongs to
 		- **roomId:** ID of the room the attachment belongs to
+	
+	- **readTimestamps:** Timestamps indicating when users read the message
+
+		- **userId:** ID of the user who read the message
+		- **readUtc:** Timestamp when the message was read by the user
+
+	- **issueProperties:** (if messageType is "Issue")
+
+		- **type:** Type of the issue
+			- **Possible values:**
+				- *Task*,
+				- *Subtask*,
+				- *Bug*,
+				- *Epic*,
+				- *Story*,
+				- *FeatureRequest*,
+				- *MergeRequest*
+
+		- **status:** Current status of the issue
+			- **Possible values:**
+				- *Backlog*,
+				- *ToDo*,
+				- *InProgress*,
+				- *ToVerify*,
+				- *Done*,
+				- *Declined*,
+
+		- **assignees:** Array of user IDs assigned to the issue
+	
+	- **meetingProperties:** (if messageType is "Meeting")
+
+		- **timeUtc:** Time of the meeting start
+		- **duration:** Duration of the meeting
 
 - **roomId:** Unique identifier for the chat room
 
@@ -176,3 +238,193 @@ JSON response example:
 - The `direction` parameter allows you to specify whether to load older messages ("backward") or newer messages ("forward") beginning from the specified cursor (message ID). If not specified, the default is to load newer messages.
 - The `limit` parameter allows you to control how many messages are returned in a single request. If not specified, all messages according to `cursor` and `direction` parameters will be returned.
 - Messages are returned in chronological order based on their `messageId`.
+
+---
+
+
+## POST /api/v1/rooms/${roomId}/messages
+
+### Purpose
+
+Creates a new message in the specified chat room.
+
+---
+
+### Authentication
+
+- **Required:** Secure, HTTP-only session cookie
+- Unauthorized access returns a 401 error.
+
+---
+
+### Request
+
+- **Method:** POST
+
+- **URL Format:** /api/v1/rooms/${roomId}/messages
+	- **roomId:** The unique identifier of the chat room to create a message in.
+
+- **Headers:**
+	- **Content-Type:** application/json
+
+- **Cookies:** Must include a valid session cookie
+
+#### Request Body
+
+JSON object containing the message details:
+
+```json
+{
+  "content": "New message!"
+}
+```
+
+**Explanation:**
+
+- **content:** The text content of the new message to be created in the chat room.
+
+---
+
+### Response
+
+#### Success (200 OK)
+
+JSON response example:
+
+```json
+{
+	"httpStatusCode": 200,
+}
+```
+
+#### Error
+
+JSON response example:
+
+```json
+{
+	"errorText": "Wrong Bearer, please renew Web API Access Token",
+	"httpStatusCode": 401
+}
+```
+
+**Explanation:**
+
+- **errorText:** Contains a description of the failure
+- **httpStatusCode:** HTTP status code reflects the error type (e.g., 401 for unauthorized, 500 for internal error)
+
+---
+
+## DELETE /api/v1/messages/${messageId}
+
+### Purpose
+
+Deletes a specific message by its ID.
+
+---
+
+### Authentication
+
+- **Required:** Secure, HTTP-only session cookie
+- Unauthorized access returns a 401 error.
+
+---
+
+### Request
+
+- **Method:** DELETE
+
+- **URL Format:** /api/v1/messages/${messageId}
+	- **messageId:** The unique identifier of the message to be deleted.
+
+- **Headers:** None required
+- **Cookies:** Must include a valid session cookie
+
+### Response
+
+#### Success (200 OK)
+
+JSON response example:
+
+```json
+{
+	"httpStatusCode": 200
+}
+```
+
+#### Error
+
+JSON response example:
+
+```json
+{
+	"errorText": "Wrong Bearer, please renew Web API Access Token",
+	"httpStatusCode": 401
+}
+```
+
+**Explanation:**
+
+- **errorText:** Contains a description of the failure
+- **httpStatusCode:** HTTP status code reflects the error type (e.g., 401 for unauthorized, 500 for internal error)
+
+---
+
+## POST /api/v1/messages/${messageId}/read
+
+### Purpose
+
+Marks a specific message as read by the user.
+
+---
+
+### Authentication
+
+- **Required:** Secure, HTTP-only session cookie
+- Unauthorized access returns a 401 error.
+
+---
+
+### Request
+
+- **Method:** POST
+
+- **URL Format:** /api/v1/messages/${messageId}/read
+	- **messageId:** The unique identifier of the message to be marked as read.
+
+- **Headers:**
+	- **Content-Type:** application/json
+	
+- **Cookies:** Must include a valid session cookie
+
+### Response
+
+#### Success (200 OK)
+
+JSON response example:
+
+```json
+{
+	"httpStatusCode": 200
+}
+```
+
+#### Error
+
+JSON response example:
+
+```json
+{
+	"errorText": "Wrong Bearer, please renew Web API Access Token",
+	"httpStatusCode": 401
+}
+```
+
+**Explanation:**
+- **errorText:** Contains a description of the failure
+- **httpStatusCode:** HTTP status code reflects the error type (e.g., 401 for unauthorized, 500 for internal error)
+
+### Related API
+
+- [Comments API](comments.md) - retrieve and send comments on messages
+- [Attachments API](attachments.md) - manage message attachments

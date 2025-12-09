@@ -1,3 +1,12 @@
+# Login with username and password
+
+**Table of Contents**
+ 
+ - [Authenticate User](#post-apiv1login)
+ - [Related Endpoints](#related-endpoints)
+ 
+ ---
+
 ## POST /api/v1/login
 
 ### Purpose
@@ -77,5 +86,5 @@ JSON response example:
 
 ### Related Endpoints
 
-- GET /api/v1/status - Check current login state
-- POST /api/v1/logout - Log out and invalidate session
+- [GET /api/v1/status](status.md) - Check current login state
+- [POST /api/v1/logout](logout.md) - Log out and invalidate session

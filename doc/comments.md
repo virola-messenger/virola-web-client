@@ -1,3 +1,13 @@
+# Comments API Documentation
+
+**Table of Contents**
+
+- [Retrieving Comments for a Message](#get-apiv1messagesmessageidcomments)
+- [Adding a Comment to a Message](#post-apiv1messagesmessageidcomments)
+- [Related API](#related-api)
+
+---
+
 ## GET /api/v1/messages/${messageId}/comments
 
 ### Purpose
@@ -68,7 +78,13 @@ JSON response example:
       "priority": "Normal",
       "roomId": 2,
       "text": "Test message with attachment",
-      "userId": 1
+      "userId": 1,
+	  "readTimestamps": [
+			{
+				"readUtc": 1759757494299,
+				"userId": 22
+			}
+	  ]
     },
     {
       "attachments": [],
@@ -83,7 +99,17 @@ JSON response example:
       "priority": "Normal",
       "roomId": 2,
       "text": "Test message",
-      "userId": 3
+      "userId": 3,
+	  "readTimestamps": [
+			{
+				"readUtc": 1759757496294,
+				"userId": 1
+			},
+			{
+				"readUtc": 1759757494239,
+				"userId": 2
+			}
+	  ]
     }
   ],
   "roomId": 2
@@ -95,7 +121,7 @@ JSON response example:
 - **messages:** An array of message objects
 
 	- **messageId:** Unique identifier for the message
-	- **parentMessageId:** ID of the parent message if this is a comment (0 if not a comment)
+	- **parentMessageId:** ID of the parent message
 	- **userId:** ID of the user who sent the message
 	- **roomId:** ID of the room the message was sent in
 	- **text:** The content of the message
@@ -149,6 +175,11 @@ JSON response example:
 		- **textMessageId:** ID of the message this attachment belongs to
 		- **roomId:** ID of the room the attachment belongs to
 
+	- **readTimestamps:** Timestamps indicating when users read the message
+
+		- **userId:** ID of the user who read the message
+		- **readUtc:** Timestamp when the message was read by the user
+
 - **roomId:** Unique identifier for the chat room
 - **parentMessageId:** Unique identifier for the parent message
 
@@ -178,3 +209,81 @@ JSON response example:
 - The `limit` parameter allows you to control how many comments are returned in a single request. If not specified, all comments according to `cursor` and `direction` parameters will be returned.
 - Comments are returned in chronological order based on their `messageId`.
 
+---
+
+
+## POST /api/v1/messages/${messageId}/comments
+
+### Purpose
+
+Add a new comment (child message) to a specific parent message.
+
+---
+
+### Authentication
+
+- **Required:** Secure, HTTP-only session cookie
+- Unauthorized access returns a 401 error.
+
+---
+
+### Request
+
+- **Method:** POST
+
+- **URL Format:** /api/v1/messages/${messageId}/comments
+	- **messageId:** The unique identifier of the parent message to add a comment to.
+
+- **Headers:**
+	- **Content-Type:** application/json
+
+- **Cookies:** Must include a valid session cookie
+
+#### Request Body
+
+JSON object containing the message details:
+
+```json
+{
+  "content": "New comment!"
+}
+```
+
+**Explanation:**
+
+- **content:** The text of the comment to be added.
+
+---
+
+### Response
+
+#### Success (200 OK)
+
+JSON response example:
+
+```json
+{
+	"httpStatusCode": 200,
+}
+```
+
+#### Error
+
+JSON response example:
+
+```json
+{
+	"errorText": "Wrong Bearer, please renew Web API Access Token",
+	"httpStatusCode": 401
+}
+```
+
+**Explanation:**
+
+- **errorText:** Contains a description of the failure
+- **httpStatusCode:** HTTP status code reflects the error type (e.g., 401 for unauthorized, 500 for internal error)
+
+### Related API
+
+- [Message API](messages.md) - retrieve and send messages
+- [Attachments API](attachments.md) - manage message attachments
